@@ -8,7 +8,7 @@ func get_input():
 	velocity = input_direction * speed
 
 func calculate_gravity():
-	if ()
+	if (move_and_collide())
 
 func _physics_process(delta):
 	get_input()
