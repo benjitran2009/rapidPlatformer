@@ -52,8 +52,6 @@ sources/0 = SubResource("TileSetAtlasSource_1bvp3")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=206353117]
 script = ExtResource("2_0xm2m")
-speed = null
-gravity = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=200209654]
 position = Vector2(-3, 12)
