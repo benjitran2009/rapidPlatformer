@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://k5pi11b3816e" path="res://main.gd" id="2_0xm2m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vslkb"]
-size = Vector2(64, 64)
+size = Vector2(16, 32)
 
 [node name="Node2D" type="Node2D" unique_id=108175614]
 
@@ -15,4 +15,7 @@ script = ExtResource("2_0xm2m")
 shape = SubResource("RectangleShape2D_vslkb")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1407473596]
+scale = Vector2(6, 6)
 texture = ExtResource("1_ig7tw")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=720001748]
