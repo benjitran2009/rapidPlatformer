@@ -107,6 +107,13 @@ script = ExtResource("4_7mycd")
 [node name="Muzzle" type="Marker2D" parent="Player/Gun" unique_id=1563794687]
 position = Vector2(7, 0)
 
+[node name="FPS" type="RichTextLabel" parent="Player" unique_id=900374317]
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -729.0
+offset_bottom = -515.0
+text = "FPS: N/A"
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=720001748]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
