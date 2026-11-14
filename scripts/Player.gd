@@ -6,12 +6,9 @@ var jump_speed = -1000
 var gravity = 2500
 
 func shoot():
-	var b = Bullet.instantiate()#(PackedScene.GEN_EDIT_STATE_MAIN)
+	var b = Bullet.instantiate()
 	owner.add_child(b)
-	b.transform = $Gun/Muzzle.global_transform
-	#print(Bullet.can_instantiate())
-	#owner.add_child(b)
-	#b.transform = $Gun/Muzzle.global_transform
+	b.transform = $Muzzle.transform
 
 func get_input():
 	velocity.x = 0
