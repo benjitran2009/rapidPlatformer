@@ -1,8 +1,11 @@
 [gd_scene format=4 uid="uid://db3x6hhv5s5yi"]
 
+[ext_resource type="Texture2D" uid="uid://41s7g2ecrqa8" path="res://assets/background.png" id="1_7mycd"]
 [ext_resource type="Script" uid="uid://k5pi11b3816e" path="res://main.gd" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://diirwybw2yo0t" path="res://assets/player1sprite.png" id="2_h2yge"]
 [ext_resource type="Texture2D" uid="uid://dj2l6o7whj72s" path="res://assets/grass_block.png" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://blij4mpsl2dw7" path="res://assets/gunpistol.png" id="3_lquwl"]
+[ext_resource type="Script" uid="uid://ddemv4w4g2qou" path="res://gun.gd" id="4_7mycd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vslkb"]
 size = Vector2(114, 168)
@@ -50,6 +53,9 @@ sources/0 = SubResource("TileSetAtlasSource_1bvp3")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=747385512]
 
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D" unique_id=964695043]
+texture = ExtResource("1_7mycd")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=206353117]
 script = ExtResource("2_0xm2m")
 
@@ -57,10 +63,17 @@ script = ExtResource("2_0xm2m")
 position = Vector2(-3, 12)
 shape = SubResource("RectangleShape2D_vslkb")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1407473596]
+[node name="Player" type="Sprite2D" parent="CharacterBody2D" unique_id=1407473596]
 texture_filter = 1
 scale = Vector2(6, 6)
 texture = ExtResource("2_h2yge")
+
+[node name="Gun" type="Sprite2D" parent="CharacterBody2D" unique_id=401104102]
+texture_filter = 1
+position = Vector2(53, 12)
+scale = Vector2(2, 2)
+texture = ExtResource("3_lquwl")
+script = ExtResource("4_7mycd")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=720001748]
 texture_filter = 1
