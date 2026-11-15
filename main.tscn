@@ -136,5 +136,7 @@ tile_set = SubResource("TileSet_vslkb")
 [node name="Shooting" type="Timer" parent="." unique_id=343595614]
 wait_time = 0.5
 
+[node name="Death" type="AcceptDialog" parent="." unique_id=512771049]
+
 [connection signal="timeout" from="Enemy" to="." method="_on_enemy_timeout"]
 [connection signal="timeout" from="Shooting" to="Player" method="_on_shooting_timeout"]

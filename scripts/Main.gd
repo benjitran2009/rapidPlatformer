@@ -3,7 +3,10 @@ extends Node2D
 @export var EnemyTimer: Timer
 @export var Enemy: PackedScene
 @export var Cd: float = 5;
+var spawns = 0;
 @onready var PlayerSprite = $Player;
+@onready var DeathDialog = $Death
+#@onready var PlayerHP = $Player.health;
 
 # Called when the node enters the scene tree for the first time.
 
@@ -40,5 +43,6 @@ func _process(delta: float) -> void:
 
 func _on_enemy_timeout() -> void:
 	spawnEnemy()
-	EnemyTimer.start(Cd)
+	spawns+=1;
+	EnemyTimer.start(Cd-(0.1*spawns))
 	pass # Replace with function body.
