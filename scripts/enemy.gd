@@ -6,6 +6,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var deathDialog: AcceptDialog = Main.DeathDialog;
+var hitHurt = preload("res://assets/hitHurt.wav")
 
 func _ready() -> void:
 	pass
@@ -17,6 +18,9 @@ func _physics_process(delta: float) -> void:
 		if collision.get_collider():
 			if collision.get_collider().is_in_group("Player"):
 				collision.get_collider().health-=1
+				if !$AudioStreamPlayer2D.is_playing():
+					$AudioStreamPlayer2D.stream = hitHurt
+					$AudioStreamPlayer2D.play()
 				if (collision.get_collider().health<=0):
 					get_tree().quit()
 					#Main.PlayerSprite.queue_free()

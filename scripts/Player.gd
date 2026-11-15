@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var Cd: float = 0.25
 @export var ShootingTimer: Timer
 
+var shootsfx = preload("res://assets/laserShoot.wav");
 var maxHealth = 100
 var health = 100
 var run_speed = 350
@@ -43,5 +44,8 @@ func _process(_a:float) -> void:
 
 func _on_shooting_timeout() -> void:
 	shoot()
+	if !$AudioStreamPlayer2D.is_playing():
+		$AudioStreamPlayer2D.stream = shootsfx
+		$AudioStreamPlayer2D.play()
 	ShootingTimer.stop()
 	pass # Replace with function body.

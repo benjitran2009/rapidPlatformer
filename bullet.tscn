@@ -19,4 +19,6 @@ texture_filter = 2
 position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_2b2rl")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1544106499]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
