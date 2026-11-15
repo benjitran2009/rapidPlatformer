@@ -78,41 +78,52 @@ script = ExtResource("1_5vw27")
 EnemyTimer = NodePath("Enemy")
 Enemy = ExtResource("2_4c57u")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=206353117 node_paths=PackedStringArray("ShootingTimer")]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=206353117 node_paths=PackedStringArray("ShootingTimer") groups=["Player"]]
 script = ExtResource("2_0xm2m")
 Bullet = ExtResource("8_5vw27")
 ShootingTimer = NodePath("../Shooting")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=200209654]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=200209654 groups=["Player"]]
 position = Vector2(-3, 12)
 shape = SubResource("RectangleShape2D_vslkb")
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=747385512]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=747385512 groups=["Player"]]
 
-[node name="Sprite2D" type="Sprite2D" parent="Player/Camera2D" unique_id=964695043]
+[node name="Sprite2D" type="Sprite2D" parent="Player/Camera2D" unique_id=964695043 groups=["Player"]]
 texture = ExtResource("1_7mycd")
 
-[node name="Player" type="Sprite2D" parent="Player" unique_id=1407473596]
+[node name="Player" type="Sprite2D" parent="Player" unique_id=1407473596 groups=["Player"]]
 texture_filter = 1
 scale = Vector2(6, 6)
 texture = ExtResource("2_h2yge")
 
-[node name="Gun" type="Sprite2D" parent="Player" unique_id=401104102]
+[node name="Gun" type="Sprite2D" parent="Player" unique_id=401104102 groups=["Player"]]
 texture_filter = 1
 position = Vector2(53, 12)
 scale = Vector2(2, 2)
 texture = ExtResource("3_lquwl")
 script = ExtResource("4_7mycd")
 
-[node name="Muzzle" type="Marker2D" parent="Player/Gun" unique_id=1563794687]
+[node name="Muzzle" type="Marker2D" parent="Player/Gun" unique_id=1563794687 groups=["Player"]]
 position = Vector2(7, 0)
 
-[node name="FPS" type="RichTextLabel" parent="Player" unique_id=900374317]
+[node name="FPS" type="RichTextLabel" parent="Player" unique_id=900374317 groups=["Player"]]
 offset_left = -960.0
 offset_top = -540.0
 offset_right = -729.0
 offset_bottom = -515.0
 text = "FPS: N/A"
+metadata/_edit_use_anchors_ = true
+
+[node name="Health" type="RichTextLabel" parent="Player" unique_id=518427015 groups=["Player"]]
+offset_left = 808.1745
+offset_top = -539.47266
+offset_right = 960.00134
+offset_bottom = -515.22266
+rotation = -0.004716957
+text = "HP: NA/NA"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=720001748]
 texture_filter = 1

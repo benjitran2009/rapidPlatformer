@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var Cd: float = 0.25
 @export var ShootingTimer: Timer
 
+var maxHealth = 100
+var health = 100
 var run_speed = 350
 var jump_speed = -1000
 var gravity = 2500
@@ -34,6 +36,9 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	get_input()
 	move_and_slide()
+	
+func _process(_a:float) -> void:
+	$Health.text = "HP: %s/%s" % [health,maxHealth]
 
 
 func _on_shooting_timeout() -> void:
